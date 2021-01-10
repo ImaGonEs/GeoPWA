@@ -3,6 +3,8 @@ var userID = Math.floor((Math.random() * 90000) + 10000);
 var lat = 0;
 var lon = 0;
 var mp = 0;
+var mark = 0;
+var markers = 0;
 window.onload = () => {
   'use strict';
 
@@ -84,10 +86,10 @@ function initMap() {
           
     var zoom=16;
 
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    markers = new OpenLayers.Layer.Markers( "Markers" );
     map.addLayer(markers);
-    
-    markers.addMarker(new OpenLayers.Marker(lonLat));
+    mark = new OpenLayers.Marker(lonLat);
+    markers.addMarker(mark);
     
     map.setCenter (lonLat, zoom);
     var m = document.getElementById("Map");
@@ -181,7 +183,10 @@ $("#Tracker").on('click', function() {
                           .transform(
                             new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
                             map.getProjectionObject() // to Spherical Mercator Projection
-                          );                
+                          );         
+                    markers.removeMarker(mark);
+                    mark = new OpenLayers.Marker(lonLat);
+                    markers.addMarker(mark);
                     mp.setCenter(lonLat, 16);
 
                 }).fail(function (msg) {
