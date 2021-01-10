@@ -50,7 +50,7 @@ https://templatemo.com/tm-535-softy-pinko
     
     
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+    <header class="header-area header-sticky" id="head">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -61,14 +61,14 @@ https://templatemo.com/tm-535-softy-pinko
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
+                        <ul class="nav">                            
                             <li><a href="#welcome">Henry</a></li>
                             <li><a href="#features">Pablo</a></li>
                             <li><a href="#work-process">Mikel</a></li>
                             <li><a href="#testimonials">Placeholder</a></li>
-                            <li><a href="#pricing-plans">Placeholder</a></li>
-                            <li><a href="#blog">Github</a></li>
-                            <li><a href="#contact-us">DjangoPage</a></li>
+                            <li><a href="https://github.com/ImaGonEs/GeoPWA">Github</a></li>
+                            <li><a href="https://afternoon-plateau-53098.herokuapp.com/">TrackingWebPage</a></li>
+                            
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -89,12 +89,16 @@ https://templatemo.com/tm-535-softy-pinko
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                        <h1>We provide the best <strong>tracking</strong><br>service to your <strong>life</strong></h1>
-                        <p>Trace on is a professional realtime tracker designed by Dell Inc 
+                        
+                        <h1 id= "info">We provide the best <strong>tracking</strong><br>service to your <strong>life</strong></h1>
+                        <p id= "info2">Trace on is a professional realtime tracker designed by Dell Inc 
                         for you completely free of charge</p>
-                        <a href="#features" id="Tracker" class="main-button-slider">Start the tracking!</a>
-                        <p id="TText"></p>
+                        <a href="#features" id="Tracker" class="main-button-slider" >Start the tracking!</a>
+                        <h1 id="TText"></h1>
                         <div id= "Map"></div>
+                        <br>
+                        <a href="#features" id="DBut" class="main-button-slider" >Stop the tracking</a>
+                        
                     </div>
                 </div>
             </div>
@@ -150,6 +154,7 @@ https://templatemo.com/tm-535-softy-pinko
 
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
-    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.13.1/OpenLayers.js"></script>   
   </body>
 </html>

@@ -95,18 +95,57 @@ function initMap() {
     return map;
       }
 
+$('#DBut').on('click', function() {
+        if(c === 1) {
+            $.ajax({
+            type: 'DELETE',
+            url: 'https://blooming-crag-79607.herokuapp.com/GeoAPI/API/'+ userID,
+            contentType: 'application/json',
+                data: JSON.stringify({"uid": userID, "log": -11, "la": 11}), // access in body
+                }).done(function () {
+                    console.log('SUCCESS');
+                }).fail(function (msg) {
+                    console.log('FAIL');
+
+                }).always(function (msg) {
+                    console.log('ALWAYS');
+                });
+        c = 2;
+        var p = document.getElementById("TText");
+      
+        var mapDiv = document.getElementById("Map");
+        var dbut = document.getElementById("DBut");
+        dbut.style.display = "none";
+        mapDiv.style.display = "none";    
+        p.textContent = "Your are no longer being tracked. Restarting the app will restart the service.";
+       
+           }
+});
+
+
 
 $("#Tracker").on('click', function() {	
    // alert("OSTIA");
     getLocation();
     var t = document.getElementById("Tracker");
     var p = document.getElementById("TText");
+    var mapDiv = document.getElementById("Map");
+    var info = document.getElementById("info");
+    var info2 = document.getElementById("info2");
+    var head = document.getElementById("head");
+    var dbut = document.getElementById("DBut");
     var lonLat = 0;
     
     
     
     t.style.display = "none";
+    info.style.display = "none";
+    info2.style.display = "none";
+    head.style.display = "none";
     p.textContent = "You are being tracked! Your personal ID: "+userID;
+    p.style.display = "block";
+    mapDiv.style.display = "block";
+    dbut.style.display = "block";
     
     //m.style.border-radius = "25px";
     c = 1;
